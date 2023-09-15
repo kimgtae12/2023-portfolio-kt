@@ -3,7 +3,8 @@ import React from 'react';
 import * as S from '../theme/style';
 import { FullPage, Slide } from 'react-full-page';
 
-import { PageOne } from './PageOne';
+import { Intro } from './Intro';
+import { Tech } from './Tech';
 
 export const Main = () => { 
 
@@ -14,16 +15,10 @@ export const Main = () => {
             initialSlide={page}
         >
           <Slide>
-            <PageOne />
+            <Intro />
           </Slide>
           <Slide>
-            <PageOne />
-          </Slide>
-          <Slide>
-            <PageOne />
-          </Slide>
-          <Slide>
-            <PageOne />
+            <Tech />
           </Slide>
         </FullPage>
         <S.CustomDiv

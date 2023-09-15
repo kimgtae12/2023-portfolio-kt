@@ -10,6 +10,7 @@ import {
   CustomImgType,
   PositionType,
   ContainerType,
+  MoveElStyleType,
 } from './stylesPropsType'
 
 //margin & padding style - 경태
@@ -276,6 +277,14 @@ const CustomImg = styled.img<CustomImgType>`
     ${borderMixin}
 `
 
+const MoveElStyle = styled(CustomFlex)<MoveElStyleType>`
+  ${({positionX, positionY}) => `transform : translate(${positionX},${positionY});`}
+  
+  /* transform: translate(300px, 300px); */
+  transition-property: all;
+  transition-duration: 0.5s;
+  /* transition-delay: 1s; */
+`
 
 export {
   Container,
@@ -287,4 +296,5 @@ export {
   CustomTextInput,
   CustomTextArea,
   CustomImg,
+  MoveElStyle,
 }

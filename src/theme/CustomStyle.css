@@ -11,3 +11,22 @@
         margin-bottom: 10px;
         }
     }
+.border-effect {
+    transition : width 0.4s;
+}
+.btn-wrapper {
+    cursor:pointer;
+    -webkit-text-stroke-color:#fff;
+    -webkit-text-stroke-width:1px;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    transition: background-size .5s cubic-bezier(0.50,0.03,0.45,0.84);
+    background-image: linear-gradient(180deg,#fff 0%, #fff 50%, transparent 50.1%);
+    background-position : 100% 0%;
+    background-size:100% 0%;
+}
+
+.btn-wrapper-focus{
+    background-size:100% 200%;
+}
