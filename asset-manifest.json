@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/kimgtae12/2023-portfolio-kt/static/css/main.e40078e0.css",
+    "main.js": "/kimgtae12/2023-portfolio-kt/static/js/main.655d5b40.js",
+    "static/js/787.3a7cc0e9.chunk.js": "/kimgtae12/2023-portfolio-kt/static/js/787.3a7cc0e9.chunk.js",
+    "static/media/NotoSansMonoCJKkr-Bold.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansMonoCJKkr-Bold.312961faa4d4264d54b4.otf",
+    "static/media/NotoSansMonoCJKkr-Regular.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansMonoCJKkr-Regular.a68cb422768d8ec0adea.otf",
+    "static/media/NotoSansKR-Thin.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-Thin.c0b38da137ebab3b294b.otf",
+    "static/media/NotoSansKR-Light.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-Light.7d4ce2f6f92cffc70600.otf",
+    "static/media/NotoSansKR-Bold.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-Bold.bbb4ca5df6c6540f4af8.otf",
+    "static/media/NotoSansKR-DemiLight.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-DemiLight.5e4e2d29836ddabaee83.otf",
+    "static/media/NotoSansKR-Regular.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-Regular.bf54b090356010039bab.otf",
+    "static/media/NotoSansKR-Medium.otf": "/kimgtae12/2023-portfolio-kt/static/media/NotoSansKR-Medium.7def03a7e5e60c5e0704.otf",
+    "static/media/zustand.png": "/kimgtae12/2023-portfolio-kt/static/media/zustand.3e84c8be9df4b196b210.png",
+    "static/media/react-native-ioc.png": "/kimgtae12/2023-portfolio-kt/static/media/react-native-ioc.2378897021787eb80897.png",
+    "static/media/react.png": "/kimgtae12/2023-portfolio-kt/static/media/react.d1ec277247c585fa7fc6.png",
+    "static/media/mouse_ico.png": "/kimgtae12/2023-portfolio-kt/static/media/mouse_ico.32508bb3b4ee66a9c318.png",
+    "static/media/react-query.svg": "/kimgtae12/2023-portfolio-kt/static/media/react-query.30df1fcdd8e7dab0fdea2d151c745b26.svg",
+    "index.html": "/kimgtae12/2023-portfolio-kt/index.html",
+    "main.e40078e0.css.map": "/kimgtae12/2023-portfolio-kt/static/css/main.e40078e0.css.map",
+    "main.655d5b40.js.map": "/kimgtae12/2023-portfolio-kt/static/js/main.655d5b40.js.map",
+    "787.3a7cc0e9.chunk.js.map": "/kimgtae12/2023-portfolio-kt/static/js/787.3a7cc0e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e40078e0.css",
+    "static/js/main.655d5b40.js"
+  ]
+}
