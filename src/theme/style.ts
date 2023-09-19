@@ -85,6 +85,8 @@ const Container = styled.section<ContainerType>`
     bgcolor && `background-color : ${bgcolor};`}/* background-color: 'blue'; */
 `
 
+
+
 //div style - 경태
 const CustomDiv = styled.div<CustomDivType>`
   /* overflow-y:auto; */
@@ -120,6 +122,18 @@ const CustomFlex = styled(CustomDiv)<CustomFlexType>`
   flex-direction: ${({ flex_direction }) => flex_direction || 'column'};
   justify-content: ${({ justify_content }) => justify_content || 'flex-start'};
   align-items: ${({ align_items }) => align_items || 'flex-start'};
+`
+
+const PcDisplay = styled(CustomDiv)`
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
+`
+
+const MobileDisplay = styled(CustomDiv)`
+  @media screen and (min-width: 721px) {
+    display: none;
+  }
 `
 
 //margin 필요할때 사용 - 경태
@@ -288,6 +302,8 @@ const MoveElStyle = styled(CustomFlex)<MoveElStyleType>`
 
 export {
   Container,
+  PcDisplay,
+  MobileDisplay,
   CustomDiv,
   CustomFlex,
   MarginCom,
