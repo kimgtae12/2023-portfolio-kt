@@ -3,7 +3,7 @@ import * as S from '../theme/style';
 
 export const Intro = () => {
 
-    const introText = ['안녕하세요!', '2년차','프론트엔드','개발자',`김경태`,'입니다'];
+    const introText = ['안녕하세요!', '3년차','프론트엔드','개발자',`김경태`,'입니다'];
 
     const [tiping, setTiping] = React.useState<string>(''); //타이핑되는 문구상태
     const [tipingPage, setTipingPage] = React.useState(0);

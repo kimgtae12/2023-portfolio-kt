@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import * as S from '../theme/style';
 import * as TS from '../component/Tech/TechStyle';
 import { colors } from '../theme/color';
-import RreactQueryImg from '../assets/img/react-query.svg';
 import { TechElement } from '../component/Tech/TechElement';
 import { TechMobileEl } from '../component/Tech/TechMobileEl'
+import { techList } from '../utils/list';
 
 interface DetailInfoType { 
     type: string, //tech type
@@ -21,64 +21,16 @@ export const Tech = () => {
     
     const [selIndex, setSelIndex] = React.useState<number>();
 
-    const techList = [
-        {
-            posX: 150,
-            posY: -80,
-            img: require('../assets/img/react.png'),
-            technic: 70,
-            name: 'React.JS',
-            commnet : 'React.JS를 '
-        },
-        {
-            posX: 150,
-            posY: 80,
-            img : require('../assets/img/react-native-ioc.png'),
-            technic: 60,
-            name : 'React Native',
-        },
-        {
-            posX: -150,
-            posY: 80,
-            img : require('../assets/img/typescript.png'),
-            technic: 80,
-            name : 'TypeScript',
-        },
-        {
-            posX: -150,
-            posY: -80,
-            img : require('../assets/img/vue.png'),
-            technic: 50,
-            name : 'Vue.JS - Vite',
-        },
-        {
-            posX: 0,
-            posY: -150,
-            img : RreactQueryImg,
-            technic: 60,
-            name : 'React Query',
-            
-        },
-        {
-            posX: 0,
-            posY: 150,
-            img : require('../assets/img/zustand.png'),
-            technic: 80,
-            name : 'Zustand',
-        },
-    ]
-
-    
-
     React.useEffect(() => {
         let observer: IntersectionObserver;
 
         if (target) {
             observer = new IntersectionObserver(([e]) => {
                 const target = e.target as HTMLElement;
-                if (!e.isIntersecting) { 
-                    setIsFocus(false);
-                }
+                // if (!e.isIntersecting) { 
+                    setIsFocus(e.isIntersecting);
+                    console.log(e.isIntersecting);
+                // }
             })
             observer.observe(target.current as Element);
         }
@@ -97,7 +49,7 @@ export const Tech = () => {
 
     return (
       <S.Container>
-        <S.PcDisplay height={'100%'}>
+        <S.PcDisplay height={'100%'} id={'tech'}>
           <S.CustomFlex
             align_items="center"
             justify_content="center"
@@ -118,8 +70,7 @@ export const Tech = () => {
                 bw={0.7}
                 bc={isFocus ? colors.FONT_COLOR1 : colors.FONT_COLOR1}
                 br={10000}
-                // bgcolor={colors.FONT_COLOR1}
-                style={{ zIndex: 999, cursor: 'pointer' }}
+                style={{ zIndex: 999, }}
                 className={`btn-wrapper ${isFocus ? 'btn-wrapper-focus' : ''}`}
                 onClick={() => {
                   setIsFocus(!isFocus)
@@ -162,13 +113,18 @@ export const Tech = () => {
           </S.CustomFlex>
         </S.PcDisplay>
         <S.MobileDisplay height={'100%'} style={{ textAlign: 'left' }}>
-            <S.CustomDiv height={'85%'}>
-                <S.CustomFlex width={'100%'} height={'100%'} pt={ 2}>
+            <S.CustomDiv height={'100%'}>
+
+                <S.CustomFlex width={'100%'} height={'100%'} mt={2}>
+                  <S.CustomDiv width={'100%'} ref={target}>
                     {techList.map((item, index) => {
                         return (
-                            <TechMobileEl itemInfo={item} key={ index} />
+                          <S.CustomDiv width={'100%'} key={'tech'+index}>
+                            <TechMobileEl isFocus={isFocus} itemInfo={item} />
+                          </S.CustomDiv>
                         )
                     })}
+                  </S.CustomDiv>
                 </S.CustomFlex>
             </S.CustomDiv>
         </S.MobileDisplay>

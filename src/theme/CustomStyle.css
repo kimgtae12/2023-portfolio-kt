@@ -1,4 +1,8 @@
 /* .wrap {text-align: center; margin-bottom: 20px;} */
+:root{
+    cursor:none;
+}
+
 .bounce-effect{
     animation: motion 0.5s linear 0s infinite alternate;
     margin-top: 0;
@@ -14,15 +18,29 @@
 .border-effect {
     transition : width 0.4s;
 }
-.btn-wrapper {
-    cursor:pointer;
+.menu-btn-wrapper {
+    /* cursor:pointer; */
     -webkit-text-stroke-color:#fff;
+    /* -webkit-text-stroke-width:1px; */
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    transition: background-size .3s cubic-bezier(0.50,0.03,0.45,0.84);
+    background-color:white;
+    background-image: linear-gradient(180deg,#99ccff 0%, #99ccff 50%, transparent 50.1%);
+    background-position : 100% 0%;
+    background-size:100% 0%;
+}
+
+.btn-wrapper {
+    /* cursor:pointer; */
+    -webkit-text-stroke-color:#99ccff;
     -webkit-text-stroke-width:1px;
     -webkit-text-fill-color:transparent;
     -webkit-background-clip: text;
     background-repeat: no-repeat;
     transition: background-size .5s cubic-bezier(0.50,0.03,0.45,0.84);
-    background-image: linear-gradient(180deg,#fff 0%, #fff 50%, transparent 50.1%);
+    background-image: linear-gradient(180deg,#99ccff 0%, #99ccff 50%, transparent 50.1%);
     background-position : 100% 0%;
     background-size:100% 0%;
 }
@@ -31,7 +49,131 @@
     opacity: 0;
     /* transition: opacity 0.5s; */
 }
-
+.menu-btn-wrapper-focus{
+    -webkit-text-stroke-color:#99ccff !important;
+    background-size:100% 200%;
+}
 .btn-wrapper-focus{
     background-size:100% 200%;
 }
+
+.task_flip_container{
+    width:100%;
+    height:100%;
+    perspective: 1100px;
+}
+
+.task_card {
+    width : 100%;
+    height : 100%;
+    position:relative;
+    transition:.4s;
+    transform-style: preserve-3d;
+}
+
+.task_card_click{
+    transform : rotateY(180deg);
+}
+
+.task_front, .task_back {
+    position : absolute;
+    width: 100%;
+    height:100%;
+    backface-visibility: hidden;
+}
+
+.task_back {
+    transform: rotateY(180deg);
+}
+
+
+.task_flip_container:hover .task_card {
+    /* transform : rotateY(180deg); */
+}
+
+#hamburger-11 {
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+#hamburger-11.is-active {
+	animation: smallbig 0.6s forwards;
+}
+
+@keyframes smallbig {
+	0%,
+	100% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	50% {
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+	}
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+    /* position: relative; */
+    width: 40px; /* 원래 크기의 20% 줄임 */
+    height: 35.2px; /* 원래 크기의 20% 줄임 */
+  }
+  
+  .menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+  }
+  
+  .menu-trigger span:nth-of-type(1) {
+    top: 0;
+  }
+  
+  .menu-trigger span:nth-of-type(2) {
+    top: 16px;
+  }
+  
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+  }
+  
+  /* 2th bar 사라지고,  1st 3rd bar 회전하며 X */
+  
+  .menu-trigger.active span {
+    background-color: #fff;
+  }
+  
+  .menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(16px) rotate(-45deg);
+  }
+  
+  .menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  
+  .menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-16px) rotate(45deg); 
+  }
+
+.pointer {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    left: -15px;
+    top: -15px;
+    z-index:999;
+    pointer-events: none;
+  }

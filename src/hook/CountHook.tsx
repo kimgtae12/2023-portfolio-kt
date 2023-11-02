@@ -20,7 +20,7 @@ export const useCountUp = (num: number, duration: number) => {
             clearInterval(counter)
           }
         }, frameRate)
-    }, [])
+    }, [num])
     
     return count;
 }

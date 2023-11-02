@@ -12,17 +12,30 @@ interface TechElementType {
     technic: number
     name: string
   }
+  isFocus:boolean,
 }
 
 export const TechMobileEl = ({
   itemInfo,
+  isFocus,
 }: TechElementType) => {
+
+  const [technicPer , setTechnicPer] = React.useState(0);
+
+  React.useEffect(()=>{
+    if(isFocus){
+      setTechnicPer(itemInfo.technic);
+    }
+    else{
+      setTechnicPer(0);
+    }
+  },[isFocus])
   
   return (
     <S.CustomFlex
       width={'100%'}
-      pt={1}
-      pb={1}
+      mt={1}
+      mb={1}
       bbw={0.1}
       bc={colors.BORDER_COLOR1}
     >
@@ -44,11 +57,11 @@ export const TechMobileEl = ({
         >
           <TS.ProgressFront
             bgcolor={colors.FONT_COLOR1}
-            width={itemInfo.technic}
+            width={technicPer}
             br={1}
           />
         </TS.ProgressBack>
-        <TechCount technic={itemInfo.technic} />    
+        <TechCount technic={technicPer} />    
       </S.CustomFlex>
     </S.CustomFlex>
   )

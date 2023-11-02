@@ -66,7 +66,7 @@ const borderMixin = css<BoarderViewType>`
   border-bottom-right-radius: ${({ bbrr }) => bbrr && `${bbrr}rem`};
 `
 
-//position이 absolute일때 사용 - 경태
+//position이 absolute일때 사용
 const PositionMixin = css<PositionType>`
   top: ${({ top }) => top && `${top}rem`};
   left: ${({ left }) => left && `${left}rem`};
@@ -75,19 +75,22 @@ const PositionMixin = css<PositionType>`
 `
 
 const Container = styled.section<ContainerType>`
-  max-width: 1024px;
+  max-width: 1280px;
   height:100vh;
+  min-height:100vh;
   padding-right: 2.3rem;
   padding-left: 2.3rem;
   margin: 0 auto;
 
   ${({ bgcolor }) =>
     bgcolor && `background-color : ${bgcolor};`}/* background-color: 'blue'; */
+
+
 `
 
 
 
-//div style - 경태
+//div style
 const CustomDiv = styled.div<CustomDivType>`
   /* overflow-y:auto; */
   -webkit-box-sizing: border-box;
@@ -122,6 +125,13 @@ const CustomFlex = styled(CustomDiv)<CustomFlexType>`
   flex-direction: ${({ flex_direction }) => flex_direction || 'column'};
   justify-content: ${({ justify_content }) => justify_content || 'flex-start'};
   align-items: ${({ align_items }) => align_items || 'flex-start'};
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  
+  &::-webkit-scrollbar{
+    display: none;
+  }
 `
 
 const PcDisplay = styled(CustomDiv)`
@@ -167,6 +177,7 @@ const CustomPText = styled.p<CustomTextType>`
   letter-spacing: -0.1rem;
   ${({ background }) => background && `background : ${background};`}
   ${({ textclip }) => textclip && `-webkit-background-clip: text;`}
+  white-space: pre-wrap;
 `
 
 //span 커스텀 - 경태
@@ -292,7 +303,7 @@ const CustomImg = styled.img<CustomImgType>`
 `
 
 const MoveElStyle = styled(CustomFlex)<MoveElStyleType>`
-  ${({positionX, positionY}) => `transform : translate(${positionX},${positionY});`}
+  ${({position_x, position_y}) => `transform : translate(${position_x},${position_y});`}
   
   /* transform: translate(300px, 300px); */
   transition-property: all;

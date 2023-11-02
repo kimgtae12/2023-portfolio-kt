@@ -50,7 +50,7 @@ const ProgressFront = styled(CustomDiv)`
   position:absolute;
   top:0;
   left:0;
-  transition : width 0.5s;
+  transition : width 1s;
 `
 
 export {

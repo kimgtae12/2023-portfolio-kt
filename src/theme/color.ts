@@ -56,7 +56,7 @@ export const colors : colorType = {
     BLACK : '#000',
 
     MAIN_COLOR : '#4737DF',
-    SKY_BLUE_COLOR : '#3498ED',
+    SKY_BLUE_COLOR : '#99ccff',
     WHITE_RED_COLOR : '#FF3B6D',
     WHITE_GRAY_COLOR : '#999999',
     RED_COLOR : '#FF5A5F',

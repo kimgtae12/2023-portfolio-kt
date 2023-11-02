@@ -98,7 +98,7 @@ export type CustomImgType = MarginPaddingMixinType & BoarderViewType & {
     object_fit? : string,
 }
 
-export type MoveElStyleType = {
-    positionX: string,
-    positionY : string,
+export type MoveElStyleType = CustomFlexType & {
+    position_x: string,
+    position_y : string,
 }
